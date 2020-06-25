@@ -1,0 +1,259 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Database1Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Department">
+          <Key>
+            <PropertyRef Name="deid" />
+          </Key>
+          <Property Name="deid" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="dename" Type="nchar" MaxLength="10" />
+          <Property Name="demanage" Type="nchar" MaxLength="10" />
+          <Property Name="demanageid" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="emid" />
+          </Key>
+          <Property Name="emid" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="emname" Type="nchar" MaxLength="10" />
+          <Property Name="empwd" Type="nchar" MaxLength="10" />
+          <Property Name="emphone" Type="nchar" MaxLength="10" />
+          <Property Name="emmanage" Type="bit" />
+          <Property Name="deid" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Equipment">
+          <Key>
+            <PropertyRef Name="eqid" />
+          </Key>
+          <Property Name="eqid" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="eqname" Type="nchar" MaxLength="10" />
+          <Property Name="eqstandard" Type="nchar" MaxLength="10" />
+          <Property Name="eqphoto" Type="nvarchar" MaxLength="200" />
+          <Property Name="eqprice" Type="nchar" MaxLength="10" />
+          <Property Name="eqdate" Type="nchar" MaxLength="10" />
+          <Property Name="eqlocation" Type="nchar" MaxLength="10" />
+          <Property Name="eqmanage" Type="nchar" MaxLength="10" />
+          <Property Name="emid" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <Association Name="FK_Department_ToTable">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+          <End Role="Department" Type="Self.Department" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="emid" />
+            </Principal>
+            <Dependent Role="Department">
+              <PropertyRef Name="demanageid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employee_ToTable">
+          <End Role="Department" Type="Self.Department" Multiplicity="0..1" />
+          <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="deid" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="deid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Equipment_ToTable">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+          <End Role="Equipment" Type="Self.Equipment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="emid" />
+            </Principal>
+            <Dependent Role="Equipment">
+              <PropertyRef Name="emid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Database1ModelStoreContainer">
+          <EntitySet Name="Department" EntityType="Self.Department" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Equipment" EntityType="Self.Equipment" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Department_ToTable" Association="Self.FK_Department_ToTable">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="Department" EntitySet="Department" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employee_ToTable" Association="Self.FK_Employee_ToTable">
+            <End Role="Department" EntitySet="Department" />
+            <End Role="Employee" EntitySet="Employee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Equipment_ToTable" Association="Self.FK_Equipment_ToTable">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="Equipment" EntitySet="Equipment" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Database1Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Department">
+          <Key>
+            <PropertyRef Name="deid" />
+          </Key>
+          <Property Name="deid" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="dename" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="demanage" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="demanageid" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK_Department_ToTable" FromRole="Department" ToRole="Employee" />
+          <NavigationProperty Name="Employee1" Relationship="Self.FK_Employee_ToTable" FromRole="Department" ToRole="Employee" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="emid" />
+          </Key>
+          <Property Name="emid" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="emname" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="empwd" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="emphone" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="emmanage" Type="Boolean" />
+          <Property Name="deid" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Department" Relationship="Self.FK_Department_ToTable" FromRole="Employee" ToRole="Department" />
+          <NavigationProperty Name="Department1" Relationship="Self.FK_Employee_ToTable" FromRole="Employee" ToRole="Department" />
+          <NavigationProperty Name="Equipment" Relationship="Self.FK_Equipment_ToTable" FromRole="Employee" ToRole="Equipment" />
+        </EntityType>
+        <EntityType Name="Equipment">
+          <Key>
+            <PropertyRef Name="eqid" />
+          </Key>
+          <Property Name="eqid" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="eqname" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="eqstandard" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="eqphoto" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="eqprice" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="eqdate" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="eqlocation" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="eqmanage" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="emid" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK_Equipment_ToTable" FromRole="Equipment" ToRole="Employee" />
+        </EntityType>
+        <Association Name="FK_Department_ToTable">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+          <End Role="Department" Type="Self.Department" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="emid" />
+            </Principal>
+            <Dependent Role="Department">
+              <PropertyRef Name="demanageid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employee_ToTable">
+          <End Role="Department" Type="Self.Department" Multiplicity="0..1" />
+          <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="deid" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="deid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Equipment_ToTable">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+          <End Role="Equipment" Type="Self.Equipment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="emid" />
+            </Principal>
+            <Dependent Role="Equipment">
+              <PropertyRef Name="emid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Database1Entities3" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Department" EntityType="Self.Department" />
+          <EntitySet Name="Employee" EntityType="Self.Employee" />
+          <EntitySet Name="Equipment" EntityType="Self.Equipment" />
+          <AssociationSet Name="FK_Department_ToTable" Association="Self.FK_Department_ToTable">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="Department" EntitySet="Department" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employee_ToTable" Association="Self.FK_Employee_ToTable">
+            <End Role="Department" EntitySet="Department" />
+            <End Role="Employee" EntitySet="Employee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Equipment_ToTable" Association="Self.FK_Equipment_ToTable">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="Equipment" EntitySet="Equipment" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Database1ModelStoreContainer" CdmEntityContainer="Database1Entities3">
+          <EntitySetMapping Name="Department">
+            <EntityTypeMapping TypeName="Database1Model.Department">
+              <MappingFragment StoreEntitySet="Department">
+                <ScalarProperty Name="deid" ColumnName="deid" />
+                <ScalarProperty Name="dename" ColumnName="dename" />
+                <ScalarProperty Name="demanage" ColumnName="demanage" />
+                <ScalarProperty Name="demanageid" ColumnName="demanageid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employee">
+            <EntityTypeMapping TypeName="Database1Model.Employee">
+              <MappingFragment StoreEntitySet="Employee">
+                <ScalarProperty Name="emid" ColumnName="emid" />
+                <ScalarProperty Name="emname" ColumnName="emname" />
+                <ScalarProperty Name="empwd" ColumnName="empwd" />
+                <ScalarProperty Name="emphone" ColumnName="emphone" />
+                <ScalarProperty Name="emmanage" ColumnName="emmanage" />
+                <ScalarProperty Name="deid" ColumnName="deid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Equipment">
+            <EntityTypeMapping TypeName="Database1Model.Equipment">
+              <MappingFragment StoreEntitySet="Equipment">
+                <ScalarProperty Name="eqid" ColumnName="eqid" />
+                <ScalarProperty Name="eqname" ColumnName="eqname" />
+                <ScalarProperty Name="eqstandard" ColumnName="eqstandard" />
+                <ScalarProperty Name="eqphoto" ColumnName="eqphoto" />
+                <ScalarProperty Name="eqprice" ColumnName="eqprice" />
+                <ScalarProperty Name="eqdate" ColumnName="eqdate" />
+                <ScalarProperty Name="eqlocation" ColumnName="eqlocation" />
+                <ScalarProperty Name="eqmanage" ColumnName="eqmanage" />
+                <ScalarProperty Name="emid" ColumnName="emid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

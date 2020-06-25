@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Database1ModelStoreContainer" CdmEntityContainer="Database1Entities3">
+    <EntitySetMapping Name="Department">
+      <EntityTypeMapping TypeName="Database1Model.Department">
+        <MappingFragment StoreEntitySet="Department">
+          <ScalarProperty Name="deid" ColumnName="deid" />
+          <ScalarProperty Name="dename" ColumnName="dename" />
+          <ScalarProperty Name="demanage" ColumnName="demanage" />
+          <ScalarProperty Name="demanageid" ColumnName="demanageid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employee">
+      <EntityTypeMapping TypeName="Database1Model.Employee">
+        <MappingFragment StoreEntitySet="Employee">
+          <ScalarProperty Name="emid" ColumnName="emid" />
+          <ScalarProperty Name="emname" ColumnName="emname" />
+          <ScalarProperty Name="empwd" ColumnName="empwd" />
+          <ScalarProperty Name="emphone" ColumnName="emphone" />
+          <ScalarProperty Name="emmanage" ColumnName="emmanage" />
+          <ScalarProperty Name="deid" ColumnName="deid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Equipment">
+      <EntityTypeMapping TypeName="Database1Model.Equipment">
+        <MappingFragment StoreEntitySet="Equipment">
+          <ScalarProperty Name="eqid" ColumnName="eqid" />
+          <ScalarProperty Name="eqname" ColumnName="eqname" />
+          <ScalarProperty Name="eqstandard" ColumnName="eqstandard" />
+          <ScalarProperty Name="eqphoto" ColumnName="eqphoto" />
+          <ScalarProperty Name="eqprice" ColumnName="eqprice" />
+          <ScalarProperty Name="eqdate" ColumnName="eqdate" />
+          <ScalarProperty Name="eqlocation" ColumnName="eqlocation" />
+          <ScalarProperty Name="eqmanage" ColumnName="eqmanage" />
+          <ScalarProperty Name="emid" ColumnName="emid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
