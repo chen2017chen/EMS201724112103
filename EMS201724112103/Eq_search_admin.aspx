@@ -13,6 +13,7 @@
             height: 40px;
             margin-top: 5px;
             overflow: hidden;
+
         }
 
             .nav-logo a {
