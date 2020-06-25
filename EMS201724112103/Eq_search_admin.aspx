@@ -31,6 +31,9 @@
         }
         .nav-justified{
             border-style:solid;
+
+
+
         }
         .auto-style1 {
             width: 100%;
