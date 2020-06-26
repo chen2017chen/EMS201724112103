@@ -37,6 +37,9 @@
             font-size: large;
             color: #00FF00;
         }
+        .auto-style2 {
+            width: 100%;
+        }
         </style>
 </head>
 <body background="images\background.jpg" style="background-repeat:no-repeat ;background-size:100% 100%;background-attachment: fixed;">
@@ -83,7 +86,10 @@
             </div>
         </nav>
         <br />
-        <span class="auto-style1">编号：</span><asp:TextBox ID="TextBox1" runat="server" CssClass="auto-style1"></asp:TextBox>
+        <br />
+        <table class="auto-style2">
+            <tr>
+                <td><span class="auto-style1">编号：</span><asp:TextBox ID="TextBox1" runat="server" CssClass="auto-style1"></asp:TextBox>
         <br class="auto-style1" />
         <span class="auto-style1">姓名：</span><asp:TextBox ID="TextBox2" runat="server" CssClass="auto-style1"></asp:TextBox>
         <br class="auto-style1" />
@@ -123,7 +129,8 @@
                 <asp:Parameter Name="emid" Type="String" />
             </UpdateParameters>
         </asp:SqlDataSource>
-        <br />
+                </td>
+                <td>
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="emid" DataSourceID="SqlDataSource1" BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" CellPadding="4">
             <Columns>
                 <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
@@ -143,6 +150,9 @@
             <SortedDescendingCellStyle BackColor="#F6F0C0" />
             <SortedDescendingHeaderStyle BackColor="#7E0000" />
         </asp:GridView>
+                </td>
+            </tr>
+        </table>
         <br />
        
     </div>

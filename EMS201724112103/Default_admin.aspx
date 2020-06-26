@@ -45,19 +45,24 @@
             color: #66AFE9;
             font-size: large;
         }
-        .auto-style3 {
-            color: #800080;
+        .auto-style4 {
+            font-family: Arial;
+            font-size: x-large;
+            color: #FF0000;
+        }
+        .auto-style5 {
+            font-size: x-large;
+            color: #00FF00;
+        }
+        .auto-style6 {
             border-left-style: solid;
             border-left-color: #C0C0C0;
             border-right-style: solid;
             border-top-style: solid;
             border-top-color: #C0C0C0;
             border-bottom-style: solid;
-        }
-        .auto-style4 {
-            font-family: Arial;
             font-size: x-large;
-            color: #FF0000;
+            color: #00FF00;
         }
     </style>
 </head>
@@ -109,63 +114,63 @@
         <table class="nav-justified">
             
             <tr align="center" class="auto-style2">
-                <td class="auto-style3">管理员</td>
-                <td class="auto-style3">设备</td>
-                <td class="auto-style3">部门</td>
-                <td class="auto-style3">员工信息</td>
+                <td class="auto-style6">管理员</td>
+                <td class="auto-style6">设备</td>
+                <td class="auto-style6">部门</td>
+                <td class="auto-style6">员工信息</td>
             </tr>
             <tr align="center">
-                <td class="auto-style3">
+                <td class="auto-style6">
                     编号：<asp:Label ID="Label4" runat="server" Text=""></asp:Label>
                 </td>
                 <td class="auto-style1">
-                    <asp:Button ID="Button1" runat="server" Text="设备查询" OnClick="Button1_Click1" />
+                    <asp:Button ID="Button1" runat="server" Text="设备查询" OnClick="Button1_Click1" CssClass="auto-style5" />
                 </td>
                 <td class="auto-style1">
-                    <asp:Button ID="Button2" runat="server" Text="部门查询" OnClick="Button2_Click1" />
+                    <asp:Button ID="Button2" runat="server" Text="部门查询" OnClick="Button2_Click1" CssClass="auto-style5" />
                 </td>
                 <td class="auto-style1">
-                    <asp:Button ID="Button3" runat="server" Text="员工信息查询" OnClick="Button3_Click" />
+                    <asp:Button ID="Button3" runat="server" Text="员工信息查询" OnClick="Button3_Click" CssClass="auto-style5" />
                 </td>
             </tr>
             <tr align="center">
-                <td class="auto-style3">
+                <td class="auto-style6">
                     姓名：<asp:Label ID="Label2" runat="server" Text=""></asp:Label>
                 </td>
                 <td class="auto-style1">
-                    <asp:Button ID="Button4" runat="server" Text="设备添加" OnClick="Button4_Click" />
+                    <asp:Button ID="Button4" runat="server" Text="设备添加" OnClick="Button4_Click" CssClass="auto-style5" />
                 </td>
                 <td class="auto-style1">
-                    <asp:Button ID="Button8" runat="server" Text="部门修改" OnClick="Button8_Click" />
+                    <asp:Button ID="Button8" runat="server" Text="部门修改" OnClick="Button8_Click" CssClass="auto-style5" />
                 </td>
                 <td class="auto-style1">
-                    <asp:Button ID="Button6" runat="server" Text="员工信息添加" OnClick="Button6_Click" />
+                    <asp:Button ID="Button6" runat="server" Text="员工信息添加" OnClick="Button6_Click" CssClass="auto-style5" />
                 </td>
             </tr>
             <tr align="center">
-                <td class="auto-style3">
+                <td class="auto-style6">
                     所属部门：<asp:Label ID="Label3" runat="server" Text=""></asp:Label>
                 </td>
                 <td class="auto-style1">
-                    <asp:Button ID="Button7" runat="server" Text="设备修改" OnClick="Button7_Click" />
+                    <asp:Button ID="Button7" runat="server" Text="设备修改" OnClick="Button7_Click" CssClass="auto-style5" />
                 </td>
                 <td class="auto-style1">
-                    <asp:Button ID="Button12" runat="server" Text="删除员工" OnClick="Button12_Click" />
+                    <asp:Button ID="Button12" runat="server" Text="删除员工" OnClick="Button12_Click" CssClass="auto-style5" />
                 </td>
                 <td class="auto-style1">
-                    <asp:Button ID="Button9" runat="server" Text="员工信息修改" OnClick="Button9_Click" />
+                    <asp:Button ID="Button9" runat="server" Text="员工信息修改" OnClick="Button9_Click" CssClass="auto-style5" />
                 </td>
             </tr>
             <tr align="center">
-                <td class="auto-style1">
+                <td class="auto-style6">
                     &nbsp;</td>
                 <td class="auto-style1">
-                    <asp:Button ID="Button10" runat="server" Text="设备删除" OnClick="Button10_Click" />
+                    <asp:Button ID="Button10" runat="server" Text="设备删除" OnClick="Button10_Click" CssClass="auto-style5" />
                 </td>
                 <td class="auto-style1">
-                    &nbsp;</td>
+                    <span class="auto-style5"></td>
                 <td class="auto-style1">
-                    &nbsp;</td>
+                    </span></td>
             </tr>
                
         </table>

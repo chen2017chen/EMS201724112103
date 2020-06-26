@@ -107,6 +107,14 @@
                     <img class="auto-style3" src="images/路由器.png" /><br />
                     路由器</td>
             </tr>
+            <tr align="center">
+                <td>
+                    <img class="auto-style4" src="images/键盘.png" /><br />
+                    键盘</td>
+                <td>
+                    <img class="auto-style5" src="images/鼠标.png" /><br />
+                    鼠标</td>
+            </tr>
         </table>
         <br />
        

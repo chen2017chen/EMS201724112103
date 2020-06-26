@@ -59,3 +59,4 @@ H:\VS2017 Project\EMS201724112103\EMS201724112103\bin\EntityFramework.xml
 H:\VS2017 Project\EMS201724112103\EMS201724112103\bin\EntityFramework.SqlServer.xml
 H:\VS2017 Project\EMS201724112103\EMS201724112103\bin\zh-Hans\EntityFramework.resources.dll
 H:\VS2017 Project\EMS201724112103\EMS201724112103\obj\Debug\EMS201724112103.csprojAssemblyReference.cache
+H:\VS2017 Project\EMS201724112103\EMS201724112103\bin\zh-Hans\EntityFramework.SqlServer.resources.dll

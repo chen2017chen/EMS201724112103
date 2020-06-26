@@ -32,6 +32,11 @@
         .nav-justified{
             border-style:solid;
         }
+        .auto-style1 {
+            font-family: Arial;
+            font-size: x-large;
+            color: #00FF00;
+        }
         </style>
 </head>
 <body background="images\background.jpg" style="background-repeat:no-repeat ;background-size:100% 100%;background-attachment: fixed;">
@@ -60,13 +65,15 @@
             </div>
         </nav>
         <br />
-        按部门编号查询：<asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="查询" />
-        <br />
-        按部门名称查询：<asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
-        <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="查询" />
+        <span class="auto-style1">按部门编号查询：</span><asp:TextBox ID="TextBox1" runat="server" CssClass="auto-style1"></asp:TextBox>
+        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="查询" CssClass="auto-style1" />
+        <br class="auto-style1" />
+        <span class="auto-style1">按部门名称查询：</span><asp:TextBox ID="TextBox2" runat="server" CssClass="auto-style1"></asp:TextBox>
+        <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="查询" CssClass="auto-style1" />
+        <span class="auto-style1">
         <br />
         <asp:Label ID="Label2" runat="server"></asp:Label>
+        </span>
         <br />
         <asp:GridView ID="GridView1" runat="server" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="2">
             <FooterStyle BackColor="#F7DFB5" ForeColor="#8C4510" />
