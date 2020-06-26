@@ -30,7 +30,7 @@
                <div class ="col">
                 <div class="card">
                     <div class="card-header bg-info">
-                        <h1 class="auto-style3">设备管理系统</h1>
+                        <h1 class="auto-style3">设备管理系统版本1.1</h1>
                     </div>
                     <div class="card-body">
                         <!--群1-->
